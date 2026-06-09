@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Letícia Gruber — Cirurgiã Dentista</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #1e3148;
+      --navy-dark: #152438;
+      --navy-mid: #2a4060;
+      --gold: #c8a96e;
+      --gold-light: #d9bc8a;
+      --gold-pale: #f0e6d0;
+      --cream: #f5f0e8;
+      --white: #ffffff;
+      --text-dark: #1a2635;
+      --text-mid: #4a5568;
+      --text-light: #8a9ab0;
+
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Jost', sans-serif;
+
+      --radius: 4px;
+      --transition: 0.35s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    /* ─── RESET ───────────────────────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--text-dark);
+      background: var(--white);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* ─── UTILITY ─────────────────────────────────────────────── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section-tag {
+      font-family: var(--font-sans);
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .75rem;
+      display: block;
+    }
+
+    .gold-divider {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin: 1rem 0 1.5rem;
+    }
+
+    .gold-divider.center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ─── MARQUEE ─────────────────────────────────────────────── */
+    .marquee-bar {
+      background: var(--navy-mid);
+      padding: .6rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .marquee-track {
+      display: inline-block;
+      animation: marquee 28s linear infinite;
+    }
+
+    .marquee-track span {
+      font-family: var(--font-sans);
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .55);
+      margin-right: 3rem;
+    }
+
+    .marquee-track span strong {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ─── NAVBAR ──────────────────────────────────────────────── */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, .97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200, 169, 110, .15);
+      padding: .9rem 0;
+      transition: box-shadow var(--transition);
+    }
+
+    .navbar.scrolled {
+      box-shadow: 0 4px 30px rgba(0, 0, 0, .07);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-logo {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.2;
+      letter-spacing: .03em;
+    }
+
+    .navbar-logo span {
+      display: block;
+      font-size: .65rem;
+      font-weight: 400;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-family: var(--font-sans);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      position: relative;
+      padding-bottom: 2px;
+      transition: color var(--transition);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--navy);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      background: var(--navy);
+      color: var(--white) !important;
+      padding: .6rem 1.4rem !important;
+      border-radius: var(--radius) !important;
+      transition: background var(--transition) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold) !important;
+      color: var(--navy) !important;
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    /* ─── HERO ────────────────────────────────────────────────── */
+    .hero {
+      min-height: 90vh;
+      background-image: url('./assets/dra.png');
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg-text {
+      position: absolute;
+      right: -1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-serif);
+      font-size: clamp(8rem, 18vw, 18rem);
+      font-weight: 300;
+      color: rgba(30, 49, 72, .05);
+      white-space: nowrap;
+      pointer-events: none;
+      line-height: 1;
+      user-select: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+      padding: 1rem 12rem 1rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+
+    .hero-content h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+      letter-spacing: .01em;
+    }
+
+    .hero-content h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-content p {
+      font-size: .9rem;
+      color: var(--text-mid);
+      max-width: 380px;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .hero-detail {
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+
+    .hero-detail strong {
+      color: var(--navy);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--navy);
+      color: var(--white);
+      padding: .9rem 2rem;
+      border-radius: var(--radius);
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: all var(--transition);
+      border: 1.5px solid var(--navy);
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--navy);
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--gold);
+      color: var(--navy);
+      padding: .9rem 2rem;
+      border-radius: var(--radius);
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: all var(--transition);
+      border: 1.5px solid var(--gold);
+    }
+
+    .btn-gold:hover {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: transparent;
+      color: var(--white);
+      padding: .85rem 1.8rem;
+      border-radius: var(--radius);
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: all var(--transition);
+      border: 1.5px solid rgba(255, 255, 255, .4);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+
+
+    /* ─── ABOUT ───────────────────────────────────────────────── */
+    .about {
+      min-height: 92vh;
+      background-image: url('./assets/dra2.png');
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .about::before {
+      content: '';
+      position: absolute;
+      left: -10rem;
+      top: -10rem;
+      width: 40rem;
+      height: 40rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200, 169, 110, .07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .about-img-wrap {
+      position: relative;
+    }
+
+    .about-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(200, 169, 110, .3);
+      z-index: 2;
+    }
+
+    .about-badge strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .about-badge span {
+      font-size: .62rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .about-content {
+
+      color: rgba(255, 255, 255, .85);
+      max-width: 480px;
+      margin-left: 50rem;
+    }
+
+    .about-content h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .about-content p {
+      font-size: .88rem;
+      line-height: 1.9;
+      color: rgba(255, 255, 255, .7);
+      margin-bottom: 1rem;
+    }
+
+    .about-content p strong {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* ─── FORMAÇÃO ────────────────────────────────────────────── */
+    .formation {
+      padding: 6rem 0;
+      background: var(--white);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      color: var(--navy);
+    }
+
+    .formation-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .formation-card {
+      padding: 1.75rem;
+      border: 1px solid rgba(30, 49, 72, .1);
+      border-radius: var(--radius);
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .formation-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--gold);
+      transition: height var(--transition);
+    }
+
+    .formation-card:hover {
+      box-shadow: 0 8px 30px rgba(30, 49, 72, .08);
+      transform: translateY(-3px);
+    }
+
+    .formation-card:hover::before {
+      height: 100%;
+    }
+
+    .fc-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--gold-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .fc-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .formation-card h4 {
+      font-family: var(--font-sans);
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: .35rem;
+      line-height: 1.4;
+    }
+
+    .formation-card p {
+      font-size: .78rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    .formation-card .fc-where {
+      font-size: .68rem;
+      color: var(--gold);
+      font-weight: 500;
+      margin-top: .5rem;
+    }
+
+    /* ─── TICKER ──────────────────────────────────────────────── */
+    .ticker {
+      background: var(--gold);
+      padding: .8rem 0;
+      overflow: hidden;
+    }
+
+    .ticker-track {
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+      white-space: nowrap;
+    }
+
+    .ticker-track span {
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-right: 2.5rem;
+    }
+
+    /* ─── CTA BANNER ──────────────────────────────────────────── */
+    .cta-banner {
+      background-image: url('./assets/dra3.png');
+      min-height: 80vh;
+      padding: 5rem 0;
+      position: static;
+      overflow: hidden;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background: linear-gradient(90deg, transparent, rgba(200, 169, 110, .05));
+      pointer-events: none;
+    }
+
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .cta-content {
+      color: var(--white);
+    }
+
+    .cta-content h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .cta-content h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .cta-content p {
+      font-size: .88rem;
+      color: rgba(255, 255, 255, .65);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .cta-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: .75rem;
+    }
+
+    .cta-img {
+      border-radius: var(--radius);
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+
+    .cta-img-placeholder {
+      border-radius: var(--radius);
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, .2);
+    }
+
+    .cta-img-placeholder:nth-child(1) {
+      background: rgba(200, 169, 110, .15);
+      grid-column: 1;
+      grid-row: 1/3;
+      aspect-ratio: auto;
+    }
+
+    .cta-img-placeholder:nth-child(2) {
+      background: rgba(255, 255, 255, .05);
+    }
+
+    .cta-img-placeholder:nth-child(3) {
+      background: rgba(200, 169, 110, .08);
+    }
+
+    /* ─── SERVICES ────────────────────────────────────────────── */
+    .services {
+      padding: 6rem 0;
+      background: var(--cream);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 1.75rem 1.25rem;
+      border-radius: var(--radius);
+      text-align: center;
+      transition: all var(--transition);
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 12px 40px rgba(200, 169, 110, .12);
+      transform: translateY(-4px);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--navy);
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .service-card h4 {
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: .5rem;
+    }
+
+    .service-card p {
+      font-size: .72rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    .services-cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    /* ─── FOR WHOM ────────────────────────────────────────────── */
+    .for-whom {
+      background: var(--navy);
+      padding: 5rem 0;
+    }
+
+    .for-whom-inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .for-whom h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .for-whom h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .fw-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .fw-card {
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(200, 169, 110, .2);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: all var(--transition);
+    }
+
+    .fw-card:hover {
+      background: rgba(200, 169, 110, .08);
+    }
+
+    .fw-card svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+      margin-bottom: .75rem;
+    }
+
+    .fw-card p {
+      font-size: .82rem;
+      color: rgba(255, 255, 255, .7);
+      line-height: 1.7;
+    }
+
+    /* ─── INSTAGRAM ───────────────────────────────────────────── */
+    .instagram {
+      background-size: 105%;
+      min-height: 100vh;
+      background-image: url(./assets/dra4.png);
+      background-repeat: no-repeat;
+
+      /* Centraliza o fundo para a borda sumir igualmente em todos os lados */
+      background-position: center;
+
+
+    }
+
+    .ig-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .ig-content h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .ig-handle {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .ig-handle-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ig-handle-dot svg {
+      width: 16px;
+      height: 16px;
+      fill: white;
+    }
+
+    .ig-handle span {
+      font-size: .8rem;
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    .ig-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .ig-cell {
+      aspect-ratio: 1;
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .ig-cell::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(30, 49, 72, .4);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .ig-cell:hover::after {
+      opacity: 1;
+    }
+
+    .ig-cell-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition);
+    }
+
+    .ig-cell:hover .ig-cell-img {
+      transform: scale(1.05);
+    }
+
+    .ig-cell-ph {
+      width: 100%;
+      height: 100%;
+      transition: transform var(--transition);
+    }
+
+    .ig-cell:hover .ig-cell-ph {
+      transform: scale(1.05);
+    }
+
+    .ig-portrait-wrap {
+      position: relative;
+    }
+
+    .ig-portrait {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: 0 20px 60px rgba(30, 49, 72, .12);
+    }
+
+    .ig-portrait-ph {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(160deg, var(--cream) 0%, #e8dcc8 100%);
+      border-radius: var(--radius);
+      box-shadow: 0 20px 60px rgba(30, 49, 72, .12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ig-portrait-ph::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 20%, rgba(200, 169, 110, .3) 0%, transparent 60%);
+    }
+
+    /* ─── FAQ ─────────────────────────────────────────────────── */
+    .faq {
+      padding: 6rem 0;
+      background: var(--cream);
+    }
+
+    .faq-grid {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(30, 49, 72, .1);
+      cursor: pointer;
+    }
+
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--navy);
+      transition: color var(--transition);
+    }
+
+    .faq-q:hover {
+      color: var(--gold);
+    }
+
+    .faq-chevron {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      transition: transform var(--transition);
+    }
+
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s cubic-bezier(.4, 0, .2, 1), padding .4s;
+      font-size: .84rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 300px;
+      padding-bottom: 1.25rem;
+    }
+
+    /* ─── MAP / LOCATION ──────────────────────────────────────── */
+    .location {
+      padding: 6rem 0;
+      background: var(--white);
+    }
+
+    .location-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .location-content h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .location-detail {
+      font-size: .82rem;
+      color: var(--text-mid);
+      margin-bottom: .5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: .5rem;
+    }
+
+    .location-detail svg {
+      width: 15px;
+      height: 15px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 2;
+      flex-shrink: 0;
+      margin-top: .15rem;
+    }
+
+    .map-placeholder {
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .75rem;
+      border: 1px solid rgba(30, 49, 72, .1);
+      font-size: .78rem;
+      color: var(--text-light);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .map-placeholder svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .map-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, rgba(30, 49, 72, .03) 0px, transparent 1px, transparent 40px),
+        repeating-linear-gradient(90deg, rgba(30, 49, 72, .03) 0px, transparent 1px, transparent 40px);
+    }
+
+    /* ─── FINAL CTA ───────────────────────────────────────────── */
+    .final-cta {
+      background: var(--navy);
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 45%;
+      background: linear-gradient(90deg, transparent, rgba(200, 169, 110, .06));
+    }
+
+    .final-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .final-content h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .final-content h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .final-content p {
+      font-size: .88rem;
+      color: rgba(255, 255, 255, .65);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .final-mosaic {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: .75rem;
+      height: 700px;
+      border: #152438 solid 1px;
+      width: 800px;
+    }
+
+    .fm-cell {
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .fm-cell:nth-child(1) {
+      grid-row: 1/3;
+    }
+
+    .fm-ph-1 {
+      background-image: url(./assets/cliente1.png);
+      height: 100%;
+    }
+
+    .fm-ph-2 {
+      background-image: url(./assets/cliente2.png);
+      height: 100%;
+    }
+
+    .fm-ph-3 {
+      background-image: url(./assets/cliente3.png);
+      height: 100%;
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      background: var(--navy-dark);
+      padding: 3rem 0 2rem;
+      border-top: 1px solid rgba(200, 169, 110, .2);
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-brand {}
+
+    .footer-logo {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: .5rem;
+    }
+
+    .footer-logo span {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: .6rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .footer-brand p {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .5);
+      line-height: 1.8;
+      margin-top: .75rem;
+    }
+
+    .footer-col h5 {
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul li {
+      margin-bottom: .5rem;
+    }
+
+    .footer-col ul li a {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .55);
+      transition: color var(--transition);
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      font-size: .68rem;
+      color: rgba(255, 255, 255, .35);
+      letter-spacing: .06em;
+    }
+
+    .footer-bottom strong {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* ─── SCROLL ANIMATIONS ───────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s cubic-bezier(.4, 0, .2, 1), transform .7s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-delay-1 {
+      transition-delay: .1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: .2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: .3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: .4s;
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .formation-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .hero-inner,
+      .about-inner,
+      .cta-inner,
+      .for-whom-inner,
+      .ig-inner,
+      .location-inner,
+      .final-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-bg-text {
+        display: none;
+      }
+
+      .about-img-wrap {
+        order: -1;
+      }
+
+      .about-badge {
+        bottom: 1rem;
+        right: 1rem;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .formation-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .fw-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .final-mosaic {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <div class="navbar-logo">
+          Dra. Letícia Gruber
+          <span>Cirurgiã Dentista</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#formacao">Formação</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#agendar" class="nav-cta">Agendar consulta</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg-text" aria-hidden="true">Saúde</div>
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content reveal">
+          <span class="section-tag">Cirurgiã Dentista · Especialista</span>
+          <h1>Mais do que<br>dentes, eu cuido<br><em>de histórias.</em></h1>
+          <div class="gold-divider"></div>
+          <p>Muito além dos tratamentos clínicos, ofereço uma experiência acolhedora, alinhada com o que você sempre
+            quis para o seu sorriso — com técnica, atenção e cuidado genuíno.</p>
+          <div class="hero-detail">
+
+          </div>
+          <a href="#agendar" class="btn-primary">Agendar avaliação →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="sobre">
+    <div class="container">
+      <div class="about-content">
+        <span class="section-tag">Conheça a Dra.</span>
+        <h2>Conheça a Dra.<br><em>Letícia Gruber</em></h2>
+        <div class="gold-divider"></div>
+        <p>Dentista apaixonada pelo que faz, acredito que cada sorriso conta uma história única. Por isso, ofereço um
+          atendimento personalizado, com foco na <strong>saúde, estética e bem-estar</strong> de cada paciente.</p>
+        <p>É o cuidado de quem vai além do diagnóstico. Com uma abordagem que une <strong>técnica avançada,
+            empatia</strong> e um ambiente acolhedor, meu objetivo é que você saia daqui se sentindo ainda mais você.
+        </p>
+        <p>Sou cirurgiã dentista com sólida formação acadêmica e diversas especializações nas áreas de
+          <strong>Implantodontia, Ortodontia, Harmonização Orofacial</strong> e muito mais. Venha conhecer!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMAÇÃO -->
+  <section class="formation" id="formacao">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Qualificação</span>
+        <h2>Formação</h2>
+        <div class="gold-divider center"></div>
+      </div>
+      <div class="formation-grid">
+        <!-- Card 1 -->
+        <div class="formation-card reveal">
+          <div class="fc-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+              <path d="M6 12v5c3 3 9 3 12 0v-5" />
+            </svg>
+          </div>
+          <h4>Internato em Gestão Complexa – Dr. Rafael Castro (2025)</h4>
+          <p>Especialização em gestão avançada de casos complexos.</p>
+          <div class="fc-where">Dr. Rafael Castro</div>
+        </div>
+        <!-- Card 2 -->
+        <div class="formation-card reveal reveal-delay-1">
+          <div class="fc-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v4l3 3" />
+            </svg>
+          </div>
+          <h4>Laserioterapia em Estomatologia – Dr. Elim (2025)</h4>
+          <p>Formação completa em aplicações do laser na odontologia clínica.</p>
+          <div class="fc-where">Módulo Especializado</div>
+        </div>
+        <!-- Card 3 -->
+        <div class="formation-card reveal reveal-delay-2">
+          <div class="fc-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M9 11l3 3L22 4" />
+              <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
+            </svg>
+          </div>
+          <h4>Técnicas Avançadas e Alinhadores – Dr. Renato Voss (2025)</h4>
+          <p>Treinamento avançado em ortodontia com alinhadores modernos.</p>
+          <div class="fc-where">Dr. Renato Voss</div>
+        </div>
+        <!-- Card 4 -->
+        <div class="formation-card reveal reveal-delay-1">
+          <div class="fc-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+            </svg>
+          </div>
+          <h4>Imersão em Cirurgia Oral Menor – CRO Nova Lima (2024)</h4>
+          <p>Aperfeiçoamento em procedimentos de cirurgia oral e técnicas atuais.</p>
+          <div class="fc-where">CRO Nova Lima</div>
+        </div>
+        <!-- Card 5 -->
+        <div class="formation-card reveal reveal-delay-2">
+          <div class="fc-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2" />
+            </svg>
+          </div>
+          <h4>Alinhamento em Odontoimplantodontia – MPT (2024)</h4>
+          <p>Módulo de planejamento e implantação em casos complexos.</p>
+          <div class="fc-where">MPT Implantes</div>
+        </div>
+        <!-- Card 6 -->
+        <div class="formation-card reveal reveal-delay-3">
+          <div class="fc-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+          </div>
+          <h4>Capacitação em Cirurgia com Doc – MPT (2024)</h4>
+          <p>Treinamento especializado com uso de tecnologia digital.</p>
+          <div class="fc-where">MPT Digital</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER GOLD -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Dra. Letícia Gruber ✦</span>
+      <span>Cirurgiã Dentista ✦</span>
+      <span>Implantodontia ✦</span>
+      <span>Ortodontia ✦</span>
+      <span>Harmonização ✦</span>
+      <span>Laserioterapia ✦</span>
+      <span>Restauração ✦</span>
+      <span>Clareamento ✦</span>
+      <span>Dra. Letícia Gruber ✦</span>
+      <span>Cirurgiã Dentista ✦</span>
+      <span>Implantodontia ✦</span>
+      <span>Ortodontia ✦</span>
+      <span>Harmonização ✦</span>
+      <span>Laserioterapia ✦</span>
+      <span>Restauração ✦</span>
+      <span>Clareamento ✦</span>
+    </div>
+  </div>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="servicos">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">O que oferecemos</span>
+        <h2>Serviços</h2>
+        <div class="gold-divider center"></div>
+      </div>
+      <div class="services-grid">
+        <!-- Avaliação -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8" />
+              <path d="M21 21l-4.35-4.35" />
+            </svg>
+          </div>
+          <h4>Avaliação</h4>
+          <p>Consulta completa e personalizada para diagnóstico preciso do seu sorriso.</p>
+        </div>
+        <!-- Laserioterapia -->
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+          </div>
+          <h4>Laserioterapia</h4>
+          <p>Tratamentos avançados com laser para dor, inflamação e cicatrização.</p>
+        </div>
+        <!-- Restauração -->
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2a10 10 0 100 20A10 10 0 0012 2z" />
+              <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+              <line x1="9" y1="9" x2="9.01" y2="9" />
+              <line x1="15" y1="9" x2="15.01" y2="9" />
+            </svg>
+          </div>
+          <h4>Restauração</h4>
+          <p>Recuperação estética e funcional dos seus dentes com materiais premium.</p>
+        </div>
+        <!-- Clareamento -->
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="5" />
+              <path
+                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+            </svg>
+          </div>
+          <h4>Clareamento (limpeza)</h4>
+          <p>Clareamento dental seguro e eficaz para um sorriso mais luminoso.</p>
+        </div>
+        <!-- Implantes -->
+        <div class="service-card reveal reveal-delay-4">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h4>Cirurgia de extração dentais</h4>
+          <p>Procedimentos seguros e minimamente invasivos com recuperação tranquila.</p>
+        </div>
+      </div>
+      <div class="services-cta reveal">
+        <a href="#agendar" class="btn-primary">Agende sua avaliação →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR WHOM -->
+  <section class="for-whom">
+    <div class="container">
+      <div class="for-whom-inner">
+        <div class="reveal">
+          <span class="section-tag">Público</span>
+          <h2>Esse<br>atendimento é<br><em>para quem</em></h2>
+          <div class="gold-divider" style="background:var(--gold)"></div>
+        </div>
+        <div class="fw-grid reveal reveal-delay-2">
+          <div class="fw-card">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+            </svg>
+            <p>Quem deseja se sentir mais seguro e confiante com seu sorriso no dia a dia.</p>
+          </div>
+          <div class="fw-card">
+            <svg viewBox="0 0 24 24">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            <p>Quem quer muito mais qualidade para o seu sorriso de forma permanente e estética.</p>
+          </div>
+          <div class="fw-card">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l4 2" />
+            </svg>
+            <p>Quem nunca foi ao dentista ou deixou de ir por medo — aqui é um lugar seguro.</p>
+          </div>
+          <div class="fw-card">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 00-3-3.87" />
+              <path d="M16 3.13a4 4 0 010 7.75" />
+            </svg>
+            <p>Quem busca um atendimento odontológico que vai além da consulta tradicional.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="instagram">
+    <div class="container">
+      <div class="ig-inner">
+        <div class="ig-content reveal visible">
+          <span class="section-tag">Redes Sociais</span>
+          <h2>Conheça o meu<br>perfil do Instagram</h2>
+          <div class="gold-divider"></div>
+
+          <div class="ig-handle">
+            <div class="ig-handle-dot">
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </div>
+            <span>@dra.leticiagruber</span>
+          </div>
+
+          <div class="ig-grid">
+            <!-- Post 1: Especialização em Implantodontia -->
+            <div class="ig-cell">
+              <a href="https://www.instagram.com/p/DYp_FzFAZoJ/" target="_blank" rel="noopener nofollow">
+                <img
+                  src="https://draleticiagruber.com.br/wp-content/uploads/sb-instagram-feed-images/703978973_18073614143656219_7941648084544917932_nfull.webp"
+                  alt="⚜️ Especialização em Implantodontia ⚜️ Hoje começo uma nova etapa da minha caminhada..."
+                  style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3/4;">
+              </a>
+            </div>
+
+            <!-- Post 2: Missão cumprida / Paciente Feliz -->
+            <div class="ig-cell">
+              <a href="https://www.instagram.com/p/DUrEaN_gSBa/" target="_blank" rel="noopener nofollow">
+                <img
+                  src="https://draleticiagruber.com.br/wp-content/uploads/sb-instagram-feed-images/628354029_18060883409656219_2994291592571417510_nfull.webp"
+                  alt="Missão cumprida: paciente feliz, saudável e pronta para voltar a sorrir sem preocupações."
+                  style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3/4;">
+              </a>
+            </div>
+
+            <!-- Post 3: Vídeo - Que minhas mãos sejam usadas para curar -->
+            <div class="ig-cell">
+              <a href="https://www.instagram.com/reel/DUEY_otgai0/" target="_blank" rel="noopener nofollow">
+                <img
+                  src="https://draleticiagruber.com.br/wp-content/uploads/sb-instagram-feed-images/624486024_1562043698182008_2491202545654591807_nfull.webp"
+                  alt="Que minhas mãos sejam usadas para curar. Sempre! 🤍✨"
+                  style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3/4;">
+              </a>
+            </div>
+
+            <!-- Post 4: Detalhes / Saúde Gengival -->
+            <div class="ig-cell">
+              <a href="https://www.instagram.com/p/DTyZIOYgU0G/" target="_blank" rel="noopener nofollow">
+                <img
+                  src="https://draleticiagruber.com.br/wp-content/uploads/sb-instagram-feed-images/619849657_18058116593656219_6005579376895394153_nfull.webp"
+                  alt="✨ Um novo começo mora nos detalhes. Mais saúde gengival. Mais conforto. Mais sorriso."
+                  style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3/4;">
+              </a>
+            </div>
+
+            <!-- Post 5: Post institucional -->
+            <div class="ig-cell">
+              <a href="https://www.instagram.com/reel/DTsmqArDrZ-/" target="_blank" rel="noopener nofollow">
+                <img
+                  src="https://draleticiagruber.com.br/wp-content/uploads/sb-instagram-feed-images/618375564_1263990338991712_1213449322121217271_nfull.webp"
+                  alt="Post do Instagram 17884169811329929"
+                  style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3/4;">
+              </a>
+            </div>
+
+            <!-- Post 6: Curiosidade sobre o Fotopolimerizador -->
+            <div class="ig-cell">
+              <a href="https://www.instagram.com/reel/DRkHMBnjkNF/" target="_blank" rel="noopener nofollow">
+                <img
+                  src="https://draleticiagruber.com.br/wp-content/uploads/sb-instagram-feed-images/590292104_921842524339670_9201076892901329823_nfull.webp"
+                  alt="Curiosidade: A luz do fotopolimerizador parece inofensiva, mas sua intensidade azul pode causar danos na retina..."
+                  style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3/4;">
+              </a>
+            </div>
+          </div>
+
+          <a href="https://www.instagram.com/dra.leticiagruber/" target="_blank" rel="noopener" class="btn-primary"
+            style="margin-top:1rem;">Seguir no Instagram →</a>
+        </div>
+        <div class="ig-portrait-wrap reveal reveal-delay-2">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Dúvidas Comuns</span>
+        <h2>Perguntas frequentes</h2>
+        <div class="gold-divider center"></div>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Quanto custa uma consulta com a Dra. Letícia Gruber?
+            <svg class="faq-chevron" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </div>
+          <div class="faq-a">O valor da consulta de avaliação é calculado individualmente após análise do caso. Entre em
+            contato pelo WhatsApp para obter mais informações e verificar condições especiais disponíveis.</div>
+        </div>
+        <div class="faq-item reveal reveal-delay-1">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Os atendimentos têm cobertura por plano odontológico?
+            <svg class="faq-chevron" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </div>
+          <div class="faq-a">Atualmente trabalhamos com atendimento particular. Porém, oferecemos diversas facilidades
+            de pagamento para que você possa realizar seu tratamento com tranquilidade.</div>
+        </div>
+        <div class="faq-item reveal reveal-delay-2">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Quais procedimentos a Dra. Letícia realiza?
+            <svg class="faq-chevron" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </div>
+          <div class="faq-a">A Dra. Letícia atua em implantodontia, ortodontia com alinhadores, harmonização orofacial,
+            laserioterapia, clareamento dental, restaurações estéticas, cirurgias orais e muito mais.</div>
+        </div>
+        <div class="faq-item reveal reveal-delay-3">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Como funciona o agendamento de consultas?
+            <svg class="faq-chevron" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </div>
+          <div class="faq-a">O agendamento é feito diretamente pelo WhatsApp ou pelo formulário de contato no site.
+            Retornamos em até 24 horas úteis para confirmar data e horário disponíveis.</div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Vocês atendem crianças e pacientes com ansiedade?
+            <svg class="faq-chevron" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </div>
+          <div class="faq-a">Sim! Nosso ambiente foi pensado para ser acolhedor e tranquilo. Trabalhamos com técnicas de
+            sedação consciente e anestesia de qualidade para garantir conforto a todos os pacientes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location" id="contato">
+    <div class="container">
+      <div class="location-inner">
+        <div class="location-content reveal">
+          <span class="section-tag">Localização</span>
+          <h2>Onde eu atendo</h2>
+          <div class="gold-divider"></div>
+          <div class="location-detail">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <div><strong>Odonto Estética Clínica Especializada</strong><br>Rua das Flores, 142 – Centro<br>Balneário
+              Camboriú – SC</div>
+          </div>
+          <div class="location-detail" style="margin-top:.75rem;">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.8 19.79 19.79 0 01.01 4.18 2 2 0 012 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+            </svg>
+            <div>(47) 9 XXXX-XXXX</div>
+          </div>
+          <div class="location-detail" style="margin-top:.5rem;">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v4l3 3" />
+            </svg>
+            <div><strong>Horários:</strong> Seg – Sex, 8h às 18h<br>Sábados com agendamento</div>
+          </div>
+          <a href="https://wa.me/5547900000000" class="btn-primary" style="margin-top:1.5rem;" target="_blank">Agendar
+            pelo WhatsApp →</a>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div class="map-placeholder"
+            style="position: relative; width: 100%; height: 350px; overflow: hidden; border-radius: 8px;">
+            <!-- Google Maps Interativo Embutido -->
+            <iframe
+              src="https://maps.google.com/maps?q=Rua%20das%20Flores%2C%20142%20%E2%80%93%20Centro%20Balne%C3%A1rio%20Cambori%C3%BA%20%E2%80%93%20SC&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              width="100%" height="100%" style="border:0; position: absolute; top: 0; left: 0;" allowfullscreen=""
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <!-- Barra de legenda flutuante (opcional, para manter a identidade do seu layout) -->
+            <div
+              style="position: absolute; bottom: 10px; left: 10px; right: 10px; background: rgba(255, 255, 255, 0.95); padding: 10px; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: flex; flex-direction: column; pointer-events: none; backdrop-filter: blur(4px);">
+              <span
+                style="font-weight: 600; font-size: 0.85rem; color: #1c2b36; display: flex; align-items: center; gap: 5px;">
+                <svg viewBox="0 0 24 24"
+                  style="width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2;">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Nossa Localização
+              </span>
+              <small style="font-size: .72rem; color: #555; margin-top: 2px;">Rua das Flores, 142 – Centro, Balneário
+                Camboriú – SC</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta" id="agendar">
+    <div class="container">
+      <div class="final-inner">
+        <div class="final-content reveal">
+          <span class="section-tag">Dê o próximo passo</span>
+          <h2>A odontologia<br>pode ser <em>diferente.</em></h2>
+          <div class="gold-divider" style="background:var(--gold)"></div>
+          <p>Cuide do seu sorriso com quem entende que cada detalhe importa. Agende sua consulta e veja como o
+            atendimento pode ir muito além do esperado.</p>
+          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+            <a href="https://wa.me/5547900000000" class="btn-gold" target="_blank">WhatsApp →</a>
+            <a href="#contato" class="btn-outline">Ver localização</a>
+          </div>
+        </div>
+        <div class="final-mosaic reveal reveal-delay-2">
+          <div class="fm-cell">
+            <div class="fm-ph-1"></div>
+          </div>
+          <div class="fm-cell">
+            <div class="fm-ph-2"></div>
+          </div>
+          <div class="fm-cell">
+            <div class="fm-ph-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            Dra. Letícia Gruber
+            <span>Cirurgiã Dentista · CRO-SC XXXXX</span>
+          </div>
+          <p>Cuidado odontológico especializado com foco em você. Um sorriso mais saudável e confiante começa aqui.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navegação</h5>
+          <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#formacao">Formação</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Serviços</h5>
+          <ul>
+            <li><a href="#">Implantodontia</a></li>
+            <li><a href="#">Ortodontia</a></li>
+            <li><a href="#">Harmonização</a></li>
+            <li><a href="#">Laserioterapia</a></li>
+            <li><a href="#">Clareamento</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contato</h5>
+          <ul>
+            <li><a href="#">(47) 9 XXXX-XXXX</a></li>
+            <li><a href="#">@draleticiagr</a></li>
+            <li><a href="#">Balneário Camboriú</a></li>
+            <li><a href="#">Seg–Sex 8h–18h</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 <strong>Dra. Letícia Gruber</strong> — Todos os direitos reservados.</span>
+        <span>Design por <strong>GJM</strong></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // FAQ toggle
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+</body>
+
+</html>
